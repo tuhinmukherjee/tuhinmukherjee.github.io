@@ -41,7 +41,7 @@ params:
   mainSections: ["posts", "projects"] # Sections to include in Latest Posts
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true

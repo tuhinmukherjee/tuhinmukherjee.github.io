@@ -42,6 +42,3 @@ I’ve tried writing before. Diaries as a kid. Journals as an adult. Blogs that 
 I believe learning works best in public. There’s no finish line—there’s always more to understand, more to question, more to connect. I’ll use this space to catalogue what I learn, as honestly as I can.
 
 If you’re reading this and having a hard time, keep going. You’re not alone. You’ve got a friend here. I believe in you—and I hope you believe in yourself too.
-
-## Thanks to Hugo 
-This site is built using Hugo with the PaperMod theme, with a small sprinkle of help from Kiro IDE. I’m not a fan of the term “vibe coding,” but coding assistants are clearly here to stay. I’m still learning how to use them well, still exploring where they add value and where they don’t. What you see on this site is the result of that experimentation.
