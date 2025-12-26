@@ -14,20 +14,6 @@ This is the source code for my personal website at [tuhinm.com](https://tuhinm.c
 - **GitHub Pages** - Hosting and deployment
 - **GitHub Actions** - Automated builds
 
-## Local Development
-
-```bash
-# Clone with submodules
-git clone --recursive https://github.com/yourusername/tuhinmukherjee.github.io.git
-
-# Start development server
-hugo server -D
-```
-
-## Writing
-
-New posts go in `content/posts/`. The site automatically builds and deploys on push to main.
-
 ## License
 
 Content is mine. Code is open source.
