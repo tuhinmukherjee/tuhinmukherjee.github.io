@@ -19,5 +19,3 @@ This is the source code for my personal website at [tuhinm.com](https://tuhinm.c
 Content is mine. Code is open source.
 
 ---
-
-*Learning in public, one post at a time.*
