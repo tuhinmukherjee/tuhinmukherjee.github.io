@@ -1,0 +1,408 @@
+/* Override PaperMod's width constraints for homepage */
+.homepage-container {
+  width: 100vw !important;
+  max-width: none !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding: 0 !important;
+}
+
+/* Custom typography improvements for better readability */
+.post-content {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.post-title {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Improve code block readability */
+pre {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+}
+
+/* Better spacing for lists */
+.post-content ul, .post-content ol {
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TOC improvements */
+.toc {
+  max-width: 50ch;
+}
+
+/* Homepage Container - Inner Layout */
+.homepage-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Half: Profile Section */
+.profile-section {
+  flex: 1;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  /* Invisible container - blends with background */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Reduced from 5rem to bring text and image closer */
+  width: 100% !important;
+  max-width: 1200px !important; /* Much wider than PaperMod's default */
+  padding: 0 2rem;
+  /* Remove background to blend seamlessly */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Profile text container - ensure full width utilization */
+.profile-text {
+  flex: 1.2 !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.profile-text h1 {
+  font-size: 4rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Bio text - remove all width constraints and allow natural flow */
+.profile-subtitle {
+  font-size: 1.3rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 2rem !important;
+  opacity: 0.9 !important;
+  max-width: none !important;
+  width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  /* Force wider text display */
+  min-width: 500px !important;
+}
+
+.profile-image {
+  flex-shrink: 0;
+  position: relative;
+  /* Completely transparent container */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.profile-img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+  /* Completely remove all backgrounds and borders */
+  box-shadow: none !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.profile-img:hover {
+  transform: translateY(-8px) scale(1.02);
+  filter: brightness(1.05);
+}
+
+/* Theme-aware image switching - matches PaperMod's theme system */
+/* Default (light theme) - show light image, hide dark image */
+.light-theme-img {
+  display: block !important;
+}
+
+.dark-theme-img {
+  display: none !important;
+}
+
+/* Dark theme - hide light image, show dark image */
+:root[data-theme="dark"] .light-theme-img {
+  display: none !important;
+}
+
+:root[data-theme="dark"] .dark-theme-img {
+  display: block !important;
+}
+
+/* Auto theme with system preference for dark */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .light-theme-img {
+    display: none !important;
+  }
+  
+  :root:not([data-theme="light"]) .dark-theme-img {
+    display: block !important;
+  }
+}
+
+/* Social icons styling */
+.profile-text .social-icons {
+  margin: 2rem 0;
+}
+
+/* Buttons styling */
+.profile-text .buttons {
+  margin-top: 2rem;
+}
+
+/* Bottom Half: Posts Section */
+.posts-section {
+  flex: 1;
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 0;
+  /* Invisible container - blends with background */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.posts-content {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+  /* Remove background to blend seamlessly */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.posts-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.post-card {
+  background: var(--theme);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.post-card h3 a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.post-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: var(--primary);
+  color: var(--theme);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.post-summary {
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.view-all-posts {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-link {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--primary);
+  color: var(--theme);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-all-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 1400px) {
+  .profile-content,
+  .posts-content {
+    max-width: 1200px;
+  }
+  
+  .profile-content {
+    gap: 4rem;
+  }
+  
+  .profile-img {
+    width: 350px;
+    height: 450px;
+  }
+  
+  .profile-text h1 {
+    font-size: 3.5rem;
+  }
+  
+  .profile-subtitle {
+    max-width: 60ch;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile-content {
+    gap: 3rem;
+    padding: 0 1.5rem;
+  }
+  
+  .posts-content {
+    padding: 0 1.5rem;
+  }
+  
+  .profile-img {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .profile-text h1 {
+    font-size: 3rem;
+  }
+  
+  .profile-subtitle {
+    max-width: 55ch;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-container {
+    padding: 0.5rem;
+  }
+  
+  .profile-section,
+  .posts-section {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .posts-content {
+    padding: 0 1rem;
+  }
+  
+  .profile-text {
+    max-width: 100%;
+  }
+  
+  .profile-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .profile-subtitle {
+    max-width: none; /* Full width on mobile for better readability */
+  }
+  
+  .profile-image {
+    order: -1;
+  }
+  
+  .profile-img {
+    width: 280px;
+    height: 350px;
+  }
+  
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .posts-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-text h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-img {
+    width: 240px;
+    height: 300px;
+  }
+  
+  .profile-content,
+  .posts-content {
+    padding: 0 0.5rem;
+  }
+}

@@ -1,0 +1,79 @@
+<div class="homepage-container">
+    {{- with site.Params.profileMode }}
+    <!-- Top Half: Profile Section -->
+    <div class="profile-section">
+        <div class="profile-content">
+            <!-- Bio content on the left -->
+            <div class="profile-text">
+                <h1>{{ .title | default site.Title | markdownify }}</h1>
+                <div class="profile-subtitle">{{ .subtitle | markdownify }}</div>
+                
+                {{- partial "social_icons.html" -}}
+
+                {{- with .buttons }}
+                <div class="buttons">
+                    {{- range . }}
+                    <a class="button" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+                        <span class="button-inner">
+                            {{ .name }}
+                            {{- if (findRE "://" .url) }}&nbsp;
+                            <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="14" width="14">
+                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                                <path d="M15 3h6v6"></path>
+                                <path d="M10 14L21 3"></path>
+                            </svg>
+                            {{- end }}
+                        </span>
+                    </a>
+                    {{- end }}
+                </div>
+                {{- end }}
+            </div>
+
+            <!-- Profile image on the right with theme switching -->
+            <div class="profile-image">
+                <img class="profile-img light-theme-img" draggable="false" 
+                     src="/images/profile_light.png" 
+                     alt="{{ .imageTitle | default "profile image" }}" 
+                     title="{{ .imageTitle }}" />
+                
+                <img class="profile-img dark-theme-img" draggable="false" 
+                     src="/images/profile_dark.png" 
+                     alt="{{ .imageTitle | default "profile image" }}" 
+                     title="{{ .imageTitle }}" />
+            </div>
+        </div>
+    </div>
+    {{- end}}
+    
+    <!-- Bottom Half: Latest Posts Section -->
+    <div class="posts-section">
+        <div class="posts-content">
+            <h2>Latest Posts</h2>
+            <div class="posts-grid">
+                {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+                {{- $pages = $pages | first 3 }}
+                {{- range $pages }}
+                <article class="post-card">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <div class="post-meta">
+                        <time>{{ .Date.Format "January 2, 2006" }}</time>
+                        {{- if .Params.tags }}
+                        <div class="post-tags">
+                            {{- range .Params.tags | first 2 }}
+                            <span class="tag">{{ . }}</span>
+                            {{- end }}
+                        </div>
+                        {{- end }}
+                    </div>
+                    <p class="post-summary">{{ .Summary | truncate 120 }}</p>
+                </article>
+                {{- end }}
+            </div>
+            <div class="view-all-posts">
+                <a href="/posts/" class="view-all-link">View All Posts →</a>
+            </div>
+        </div>
+    </div>
+</div>

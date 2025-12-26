@@ -1,0 +1,181 @@
+/* Custom Font Styles for Hugo PaperMod Theme */
+
+/* Import Google Fonts - Space Mono for primary and code fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/* Alternative font options (uncomment the one you want to use):
+
+// Modern Sans-Serif Options:
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+// Serif Options:
+// @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+
+// Monospace Options:
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600&display=swap');
+*/
+
+/* Root font variables - Space Mono configuration */
+:root {
+  /* Main content font - Space Mono for that distinctive monospace look */
+  --font-primary: 'Space Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* Code/monospace font - Also Space Mono for consistency */
+  --font-mono: 'Space Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  /* Heading font - Space Mono for consistent monospace aesthetic */
+  --font-heading: 'Space Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+/* Apply fonts to different elements */
+
+/* Body and general text */
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Headings - Space Mono with bold weight for emphasis */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Navigation and menu items */
+.nav, .menu {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
+/* Code blocks and inline code */
+code, pre, .highlight {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+/* Inline code styling */
+code {
+  font-size: 0.875em;
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+}
+
+/* Code block styling */
+pre {
+  font-size: 0.875em;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+/* Post meta information */
+.post-meta {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+/* Button and link styling */
+.btn, button, a {
+  font-family: var(--font-primary);
+}
+
+/* Table of contents */
+.toc {
+  font-family: var(--font-primary);
+  font-size: 0.9em;
+}
+
+/* Search input */
+input[type="search"], input[type="text"] {
+  font-family: var(--font-primary);
+}
+
+/* Footer */
+footer {
+  font-family: var(--font-primary);
+  font-size: 0.875em;
+}
+
+/* Optional: Improve font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optimal line length and readability improvements */
+.post-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  /* Limit line length to 65ch for optimal readability */
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-title {
+  font-weight: 700;
+  line-height: 1.2;
+  /* Slightly wider for titles */
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Apply line length limits to other text content */
+.post-header {
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-meta {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ensure lists and blockquotes also follow line length rules */
+.post-content ul,
+.post-content ol,
+.post-content blockquote {
+  max-width: 65ch;
+}
+
+/* Table of contents can be slightly narrower */
+.toc {
+  max-width: 60ch;
+}
+
+/* Optional: Style for different screen sizes */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+  
+  .post-content {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    /* Maintain optimal line length on mobile */
+    max-width: 65ch;
+    padding: 0 1rem;
+  }
+  
+  .post-title {
+    max-width: 65ch;
+    padding: 0 1rem;
+  }
+  
+  .post-header,
+  .post-meta {
+    max-width: 65ch;
+    padding: 0 1rem;
+  }
+}

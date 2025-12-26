@@ -1,0 +1,70 @@
+<script>
+// Enhanced theme-aware image switching for profile images
+document.addEventListener('DOMContentLoaded', function() {
+    function updateProfileImage() {
+        // Multiple ways to detect dark theme
+        const isDark = document.body.classList.contains('dark') || 
+                      document.documentElement.classList.contains('dark') ||
+                      document.body.getAttribute('data-theme') === 'dark' ||
+                      document.documentElement.getAttribute('data-theme') === 'dark' ||
+                      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && 
+                       !document.body.classList.contains('light') &&
+                       document.body.getAttribute('data-theme') !== 'light');
+        
+        const lightImgs = document.querySelectorAll('.light-theme-img');
+        const darkImgs = document.querySelectorAll('.dark-theme-img');
+        
+        console.log('Theme switching - isDark:', isDark); // Debug log
+        
+        lightImgs.forEach(img => {
+            img.style.display = isDark ? 'none' : 'block';
+        });
+        
+        darkImgs.forEach(img => {
+            img.style.display = isDark ? 'block' : 'none';
+        });
+    }
+    
+    // Initial update with delay to ensure DOM is ready
+    setTimeout(updateProfileImage, 100);
+    
+    // Listen for theme changes with multiple observers
+    const observer = new MutationObserver(function(mutations) {
+        let shouldUpdate = false;
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && 
+                (mutation.attributeName === 'class' || 
+                 mutation.attributeName === 'data-theme')) {
+                shouldUpdate = true;
+            }
+        });
+        if (shouldUpdate) {
+            setTimeout(updateProfileImage, 50);
+        }
+    });
+    
+    // Observe changes to body and html
+    observer.observe(document.body, { 
+        attributes: true, 
+        attributeFilter: ['class', 'data-theme'] 
+    });
+    observer.observe(document.documentElement, { 
+        attributes: true, 
+        attributeFilter: ['class', 'data-theme'] 
+    });
+    
+    // Listen for system theme changes
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+            setTimeout(updateProfileImage, 50);
+        });
+    }
+    
+    // Listen for theme toggle button clicks
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('#theme-toggle') || e.target.closest('[id*="theme"]')) {
+            setTimeout(updateProfileImage, 100);
+        }
+    });
+});
+</script>

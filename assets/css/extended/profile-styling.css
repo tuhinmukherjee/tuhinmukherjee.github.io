@@ -1,0 +1,183 @@
+/* Enhanced Profile Mode Styling */
+
+/* Profile container with aesthetic box */
+.profile {
+  background: var(--theme);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode shadow */
+.dark .profile {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--border);
+}
+
+/* Profile hover effect */
+.profile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.dark .profile:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile image styling */
+.profile .profile_image {
+  border-radius: 50%;
+  border: 4px solid var(--border);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+/* Profile image hover effect */
+.profile .profile_image:hover {
+  transform: scale(1.05);
+  border-color: var(--primary);
+}
+
+/* Profile title styling */
+.profile h1 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+/* Profile subtitle/content styling */
+.profile .profile_subtitle {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  max-width: 65ch; /* Optimal line length */
+}
+
+/* Profile buttons container */
+.profile .profile_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Individual button styling */
+.profile .profile_buttons .button {
+  background: var(--primary);
+  color: var(--theme);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary);
+}
+
+/* Button hover effects */
+.profile .profile_buttons .button:hover {
+  background: transparent;
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .profile {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .profile h1 {
+    font-size: 2rem;
+  }
+  
+  .profile .profile_subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .profile .profile_image {
+    width: 140px !important;
+    height: 140px !important;
+  }
+  
+  .profile .profile_buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile .profile_buttons .button {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .profile {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .profile h1 {
+    font-size: 1.75rem;
+  }
+  
+  .profile .profile_image {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}
+
+/* Ensure profile content follows line length best practices */
+.profile .profile_subtitle p {
+  max-width: 65ch;
+  margin: 0 auto 1rem auto;
+}
+
+/* Add subtle animation on page load */
+.profile {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Social icons styling within profile */
+.profile + .social-icons {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.profile + .social-icons a {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  transition: color 0.3s ease;
+}
+
+.profile + .social-icons a:hover {
+  color: var(--primary);
+}

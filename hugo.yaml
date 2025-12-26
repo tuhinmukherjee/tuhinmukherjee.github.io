@@ -1,0 +1,165 @@
+baseURL: "https://tuhinm.com/"
+title: Tuhin
+theme: PaperMod
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+pagination:
+  pagerSize: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Cache configuration for GitHub Pages deployment
+caches:
+  images:
+    dir: ":cacheDir/images"
+
+# googleAnalytics: G-XXXXXXXXXX  # Replace with your GA4 measurement ID when ready
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: tuhinm
+  description: "tuhinm"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: Me
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+  mainSections: ["posts", "projects"] # Sections to include in Latest Posts
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "/favicon/favicon.ico"
+    favicon16x16: "/favicon/favicon-16x16.png"
+    favicon32x32: "/favicon/favicon-32x32.png"
+    apple_touch_icon: "/favicon/apple-touch-icon.png"
+    safari_pinned_tab: "/favicon/favicon.ico"
+
+  label:
+    text: "tuhinm.com"
+    icon: /favicon/apple-touch-icon.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: true # Enable profile mode for the home page
+    title: "Hi there!" 
+    subtitle: "My name is Tuhin *(pronounced “2-in”)*. I build stuff. I work at the intersection of cloud, machine learning, and system design. I am obsessed with solving real-world problems through software & systems. By day, I help enterprises transform on the cloud and use AI to create real business impact. By night, I read about how the human physiology works,it's fascinating how nature builds systems far more elegant than most software."
+    imageUrl: "/images/profile.jpg" # Add your profile image to static/images/
+    imageWidth: 300
+    imageHeight: 300
+    imageTitle: "Tuhin Mukherjee - Solution Architect"
+    # buttons:
+    #   - name: Posts
+    #     url: /posts/
+    #   - name: Projects  
+    #     url: /projects/
+    #   - name: Search
+    #     url: /search/
+
+  # home-info mode (disabled - using profile mode instead)
+  # homeInfoParams:
+  #   Title: "Hi there \U0001F44B"
+  #   Content: Welcome to my blog
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/yourusername"  # Update with your actual X/Twitter handle
+    - name: linkedin
+      url: "https://linkedin.com/in/yourusername"  # Update with your actual LinkedIn profile
+    - name: github
+      url: "https://github.com/yourusername"  # Update with your actual GitHub profile
+    # - name: thread
+    #   url: "https://threads.net/@yourusername"  # Uncomment and update when ready
+
+  analytics:
+    # google:
+    #   SiteVerificationTag: "XYZabc"  # Add your Google Search Console verification tag when ready
+    # bing:
+    #   SiteVerificationTag: "XYZabc"  # Add your Bing Webmaster verification tag when ready
+    # yandex:
+    #   SiteVerificationTag: "XYZabc"  # Add your Yandex verification tag when ready
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/yourusername/yourrepo/tree/main/content"  # Update with your actual repo path
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 40
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 50
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
