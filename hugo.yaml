@@ -94,13 +94,13 @@ params:
 
   socialIcons:
     - name: x
-      url: "https://x.com/yourusername"  # Update with your actual X/Twitter handle
+      url: "https://x.com/tuhinmukherjee"  # Update with your actual X/Twitter handle
     - name: linkedin
-      url: "https://linkedin.com/in/yourusername"  # Update with your actual LinkedIn profile
+      url: "www.linkedin.com/in/t92"  # Update with your actual LinkedIn profile
     - name: github
-      url: "https://github.com/yourusername"  # Update with your actual GitHub profile
-    # - name: thread
-    #   url: "https://threads.net/@yourusername"  # Uncomment and update when ready
+      url: "https://github.com/tuhinmukherjee"  # Update with your actual GitHub profile
+    - name: thread
+      url: "https://threads.net/who2in"  # Uncomment and update when ready
 
   analytics:
     # google:
