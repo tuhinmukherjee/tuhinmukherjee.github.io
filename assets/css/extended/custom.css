@@ -101,8 +101,7 @@ pre {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
   white-space: normal !important;
-  /* Force wider text display */
-  min-width: 500px !important;
+  /* Force wider text display - removed for mobile compatibility */
 }
 
 .profile-image {

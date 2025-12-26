@@ -96,11 +96,10 @@ params:
     - name: x
       url: "https://x.com/tuhinmukherjee"  # Update with your actual X/Twitter handle
     - name: linkedin
-      url: "www.linkedin.com/in/t92"  # Update with your actual LinkedIn profile
+      url: "https://www.linkedin.com/in/t92"  # Update with your actual LinkedIn profile
     - name: github
       url: "https://github.com/tuhinmukherjee"  # Update with your actual GitHub profile
-    - name: thread
-      url: "https://threads.net/who2in"  # Uncomment and update when ready
+# Uncomment and update when ready
 
   analytics:
     # google:
