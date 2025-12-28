@@ -74,7 +74,7 @@ params:
   profileMode:
     enabled: true # Enable profile mode for the home page
     title: "Hi there!" 
-    subtitle: "My name is Tuhin *(pronounced “2-in”)*. I build stuff. I work at the intersection of cloud, machine learning, and system design. I am obsessed with solving real-world problems through software & systems. By day, I help enterprises transform on the cloud and use AI to create real business impact. By night, I read about how the human physiology works,it's fascinating how nature builds systems far more elegant than most software."
+    subtitle: "My name is Tuhin *(pronounced “2-in”)*. I work at the intersection of cloud computing, machine learning, and system design. I am obsessed with solving real-world problems through software & systems. By day, I help enterprises transform on the cloud and use AI to create real business impact. By night, I read about how the human physiology works,it's fascinating how nature builds systems far more elegant than most software."
     imageUrl: "/images/profile.jpg" # Add your profile image to static/images/
     imageWidth: 300
     imageHeight: 300
