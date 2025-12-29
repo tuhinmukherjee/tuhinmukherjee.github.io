@@ -78,7 +78,7 @@ params:
     imageUrl: "/images/profile.jpg" # Add your profile image to static/images/
     imageWidth: 300
     imageHeight: 300
-    imageTitle: "Tuhin Mukherjee - Solution Architect"
+    imageTitle: "Tuhin"
     # buttons:
     #   - name: Posts
     #     url: /posts/
