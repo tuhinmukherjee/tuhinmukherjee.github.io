@@ -1,8 +1,4 @@
-# [tuhinm.com](https://tuhinm.com)
-
-Personal blog exploring cloud architecture, AI systems, and learning in public.
-
-## About
+# Hello Friend!
 
 This is the source code for my personal website at [tuhinm.com](https://tuhinm.com). I write about AWS architectures, system design, career growth, and the intersection of technology and real-world problem solving.
 
@@ -14,17 +10,13 @@ This is the source code for my personal website at [tuhinm.com](https://tuhinm.c
 - **GitHub Pages** - Hosting and deployment
 - **GitHub Actions** - Automated builds
 
-## :bar_chart: Real-time Insights
-<p align="left">
-<img src="https://github-readme-stats.vercel.app/api?username=tuhinmukherjee&show_icons=true&theme=radical" alt="GitHub Stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tuhinmukherjee&layout=compact&theme=radical" alt="Top Languages" />
-</p>
+## License
+Content is mine. Code is open source.
 
 ## :mailbox: Connect with me
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/t92)
 
-## License
-
-Content is mine. Code is open source.
+## Joke of the day
+<a href="https://readme-jokes.vercel.app"><img align="center" src="https://readme-jokes.vercel.app/api" alt="README Jokes"></a>
 
 ---
