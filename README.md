@@ -10,9 +10,6 @@ This is the source code for my personal website at [tuhinm.com](https://tuhinm.c
 - **GitHub Pages** - Hosting and deployment
 - **GitHub Actions** - Automated builds
 
-## License
-Content is mine. Code is open source.
-
 ## :mailbox: Connect with me
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/t92)
 
